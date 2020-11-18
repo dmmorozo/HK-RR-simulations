@@ -1,0 +1,35 @@
+;
+;	File 'topol_Ion_chain_B.itp' was generated
+;	By user: dmorozov (25203)
+;	On host: puhti-login1.bullx
+;	At date: Wed Dec 11 13:10:58 2019
+;
+;	This is a include topology file
+;
+;	Created by:
+;	                    :-) GROMACS - gmx pdb2gmx, 2019.4 (-:
+;	
+;	Executable:   /appl/spack/install-tree/gcc-9.1.0/gromacs-2019.4-s5pkaj/bin/gmx_mpi
+;	Data prefix:  /appl/spack/install-tree/gcc-9.1.0/gromacs-2019.4-s5pkaj
+;	Working dir:  /scratch/project_2001565/DrRR/DrBph
+;	Command line:
+;	  gmx_mpi pdb2gmx -f DrBphP_3DGE_SwissProt_complex-2xDHp_2xDrRR.pdb -o conf.pdb
+;	Force field was read from the standard GROMACS share directory.
+;
+
+[ moleculetype ]
+; Name            nrexcl
+Ion_chain_B         3
+
+[ atoms ]
+;   nr       type  resnr residue  atom   cgnr     charge       mass  typeB    chargeB      massB
+; residue   1 MG  rtp MG   q +2.0
+     1         MG      1     MG     MG      1          2     24.305   ; qtot 2
+; residue   2 MG  rtp MG   q +2.0
+     2         MG      2     MG     MG      2          2     24.305   ; qtot 4
+
+; Include Position restraint file
+#ifdef POSRES
+#include "posre_Ion_chain_B.itp"
+#endif
+

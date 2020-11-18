@@ -1,0 +1,61 @@
+;
+;	File 'topol.top' was generated
+;	By user: dmorozov (25203)
+;	On host: puhti-login2.bullx
+;	At date: Tue Dec 10 15:28:21 2019
+;
+;	This is a standalone topology file
+;
+;	Created by:
+;	                    :-) GROMACS - gmx pdb2gmx, 2018.8 (-:
+;	
+;	Executable:   /appl/spack/install-tree/gcc-9.1.0/gromacs-2018.8-k2hpzm/bin/gmx_mpi
+;	Data prefix:  /appl/spack/install-tree/gcc-9.1.0/gromacs-2018.8-k2hpzm
+;	Working dir:  /scratch/project_2001565/DrRR/AtRR
+;	Command line:
+;	  gmx_mpi pdb2gmx -f fixed_AgP1_3DGE_SwissProt_complex-2xDHp_2xAtRR.pdb -o conf.pdb
+;	Force field was read from the standard GROMACS share directory.
+;
+
+; Include forcefield parameters
+#include "amber03.ff/forcefield.itp"
+
+; Include chain topologies
+#include "topol_Protein_chain_C.itp"
+#include "topol_Ion_chain_C2.itp"
+#include "topol_Protein_chain_A.itp"
+#include "topol_Protein_chain_B.itp"
+#include "topol_Protein_chain_D.itp"
+#include "topol_Ion_chain_D2.itp"
+
+; Include water topology
+#include "amber03.ff/tip3p.itp"
+
+#ifdef POSRES_WATER
+; Position restraint for each water oxygen
+[ position_restraints ]
+;  i funct       fcx        fcy        fcz
+   1    1       1000       1000       1000
+#endif
+
+; Include topology for ions
+#include "amber03.ff/ions.itp"
+
+[ system ]
+; Name
+2 AgP1_3DGE in water
+
+[ molecules ]
+; Compound        #mols
+Protein_chain_C     1
+Ion_chain_C2        1
+Protein_chain_A     1
+Protein_chain_B     1
+Protein_chain_D     1
+Ion_chain_D2        1
+SOL               115
+SOL               133
+SOL         105984
+NA               201
+CL               201
+NA               16

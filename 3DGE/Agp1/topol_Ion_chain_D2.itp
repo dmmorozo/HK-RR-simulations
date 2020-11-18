@@ -1,0 +1,33 @@
+;
+;	File 'topol_Ion_chain_D2.itp' was generated
+;	By user: dmorozov (25203)
+;	On host: puhti-login2.bullx
+;	At date: Tue Dec 10 15:28:21 2019
+;
+;	This is a include topology file
+;
+;	Created by:
+;	                    :-) GROMACS - gmx pdb2gmx, 2018.8 (-:
+;	
+;	Executable:   /appl/spack/install-tree/gcc-9.1.0/gromacs-2018.8-k2hpzm/bin/gmx_mpi
+;	Data prefix:  /appl/spack/install-tree/gcc-9.1.0/gromacs-2018.8-k2hpzm
+;	Working dir:  /scratch/project_2001565/DrRR/AtRR
+;	Command line:
+;	  gmx_mpi pdb2gmx -f fixed_AgP1_3DGE_SwissProt_complex-2xDHp_2xAtRR.pdb -o conf.pdb
+;	Force field was read from the standard GROMACS share directory.
+;
+
+[ moleculetype ]
+; Name            nrexcl
+Ion_chain_D2        3
+
+[ atoms ]
+;   nr       type  resnr residue  atom   cgnr     charge       mass  typeB    chargeB      massB
+; residue 201 MG  rtp MG   q +2.0
+     1         MG    201     MG     MG      1          2     24.305   ; qtot 2
+
+; Include Position restraint file
+#ifdef POSRES
+#include "posre_Ion_chain_D2.itp"
+#endif
+

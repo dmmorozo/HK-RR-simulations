@@ -1,0 +1,33 @@
+;
+;	File 'topol_Other2.itp' was generated
+;	By user: morozovd (33046)
+;	On host: irene152
+;	At date: Wed Sep 16 20:35:43 2020
+;
+;	This is a include topology file
+;
+;	Created by:
+;	                    :-) GROMACS - gmx pdb2gmx, 2019.4 (-:
+;	
+;	Executable:   /ccc/products/gromacs-2019.4/intel--19.0.5.281__openmpi--4.0.1/default/bin/gmx_mpi
+;	Data prefix:  /ccc/products/gromacs-2019.4/intel--19.0.5.281__openmpi--4.0.1/default
+;	Working dir:  /ccc/work/cont005/racov12/morozovd/DrRR/AtRR-3A0R
+;	Command line:
+;	  gmx_mpi pdb2gmx -f AtRR-3A0R-opt.pdb
+;	Force field was read from the standard GROMACS share directory.
+;
+
+[ moleculetype ]
+; Name            nrexcl
+Other2              3
+
+[ atoms ]
+;   nr       type  resnr residue  atom   cgnr     charge       mass  typeB    chargeB      massB
+; residue 142 MG  rtp MG   q +2.0
+     1         MG    142     MG     MG      1          2     24.305   ; qtot 2
+
+; Include Position restraint file
+;#ifdef POSRES
+;#include "posre_Other2.itp"
+;#endif
+
